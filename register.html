@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script>
+      function validateForm() {
+        var name = document.forms["registerForm"]["name"].value;
+        var email = document.forms["registerForm"]["email"].value;
+        var password = document.forms["registerForm"]["password"].value;
+        if (name == "") {
+          alert("Name must be filled out");
+          return false;
+        }
+        if (email == "") {
+          alert("Email must be filled out");
+          return false;
+        }
+        if (password == "") {
+          alert("Password must be filled out");
+          return false;
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <section class="sub-header">
+      <nav>
+        <a href="index.html"><img src="images/logo%201.png" /></a>
+        <div class="nav-links" id="navLinks">
+          <i class="fa fa-remove" onclick="hideMenu()"></i>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="donate.html">DONATE</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+            <li><a href="register.html">REGISTER</a></li>
+            <li><a href="login.html">LOGIN</a></li>
+          </ul>
+        </div>
+        <i class="fa fa-reorder" onclick="showMenu()"></i>
+      </nav>
+      <h1>Register Now</h1>
+    </section>
+    <!----------ContactUs-------->
+
+    <section class="contact-us">
+      <div class="row">
+        <div class="contact-col">
+          <div>
+            <i class="fa fa-home"></i>
+            <span>
+              <h5>Islamabad</h5>
+              <p>Pakistan</p>
+            </span>
+          </div>
+          <div>
+            <i class="fa fa-phone"></i>
+            <span>
+              <h5>+92-123456789</h5>
+              <p>Our services are open 24/7</p>
+            </span>
+          </div>
+          <div>
+            <i class="fa fa-envelope-o"></i>
+            <span>
+              <h5>GTLMedicine@gmail.com</h5>
+              <p>Email Us your query</p>
+            </span>
+          </div>
+        </div>
+        <div class="contact-col">
+          <form
+            name="registerForm"
+            action="formhandler.php"
+            method="post"
+            onsubmit="return validateForm()"
+          >
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter Your Name"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter Email Address"
+              required
+            />
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter Password"
+              required
+            />
+            <button type="Submit" class="button red-btn">Register</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!----------Footer-------->
+
+    <section class="Footer">
+      <h4>About Us</h4>
+      <p>
+        This unused medicine donation project aims to donate medicines which are
+        not used.<br />This drug donation system helps the user to donate unused
+        medicines to NGO.
+      </p>
+      <div class="icons">
+        <i class="fa fa-facebook"></i>
+        <i class="fa fa-twitter"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-linkedin"></i>
+      </div>
+    </section>
+    <script>
+      var navLinks = document.getElementById("navLinks");
+      function showMenu() {
+        navLinks.style.right = "0";
+      }
+      function hideMenu() {
+        navLinks.style.right = "-200px";
+      }
+    </script>
+  </body>
+</html>
